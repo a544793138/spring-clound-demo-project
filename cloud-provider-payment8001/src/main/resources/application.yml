@@ -27,4 +27,5 @@ eureka:
     fetch-registry: true
     service-url:
       # 填写 Eureka Server 模块的配置文件中配置的地址
-      defaultZone: http://localhost:7001/eureka
+      #defaultZone: http://localhost:7001/eureka
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
