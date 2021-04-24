@@ -1,9 +1,10 @@
 server:
-  port: 80
+  port: 8006
 
 spring:
   application:
-    name: cloud-order-service
+    # 服务名称
+    name: cloud-payment-service
   cloud:
     consul:
       host: localhost
