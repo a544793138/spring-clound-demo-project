@@ -59,4 +59,12 @@ public class PaymentController {
 
         return discoveryClient;
     }
+
+    /**
+     * 自定义负载均衡算法测试接口
+     */
+//    @GetMapping("/payment/lb")
+//    public String myLoadBalance() {
+//        return serverPort;
+//    }
 }
