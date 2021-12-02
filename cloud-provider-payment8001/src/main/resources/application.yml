@@ -27,8 +27,8 @@ eureka:
     fetch-registry: true
     service-url:
       # 填写 Eureka Server 模块的配置文件中配置的地址
-      #defaultZone: http://localhost:7001/eureka
-      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
+      defaultZone: http://localhost:7001/eureka
+#      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
   instance:
     # 在 Eureka Server 上显示服务的实例时，显示这个 ID
     instance-id: payment8001
