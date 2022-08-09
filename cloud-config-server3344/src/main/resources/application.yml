@@ -1,0 +1,39 @@
+server:
+  port: 3344
+
+spring:
+  application:
+    # 服务名称
+    name: cloud-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/tjwoods/spring-cloud-config-files.git
+          search-paths:
+            - spring-cloud-config-files
+        label: master
+  # rabbitmq 配置，rabbitmq 的位置
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+eureka:
+  client:
+    # true 表示将自己注册进 Eureka Server，默认为 true
+    register-with-eureka: true
+    # true 表示从 Eureka Server 抓取自己的注册信息，默认为 true。单节点无所谓，集群必须为 true，才能配置 ribbon 使用负载均衡
+    fetch-registry: true
+    service-url:
+      # 填写 Eureka Server 模块的配置文件中配置的地址
+      defaultZone: http://eureka7001.com:7001/eureka
+
+# 这个其实是 actuator 的配置，暴露 bus 刷新配置的端点
+management:
+  endpoints:
+    web:
+      exposure:
+        # 这里固定是 bus-refresh，因为我们希望调用的是 bus/refresh 接口通知刷新配置
+        include: 'bus-refresh'
